@@ -52,5 +52,5 @@ You can add/change the fields stored for each event by modifying the parser meth
 
 # Contact
 
-Issues should be raised directly in the repository. For additional questions or comments please email me at yadunathkgp[at]gmail[dot]com
+Issues should be raised directly in the repository. For additional questions or comments please email me at yadunathkgp@gmail.com
 
