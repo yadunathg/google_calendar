@@ -8,12 +8,12 @@ class GoogleSportsCalendar(GoogleCalendar):
 
     def fetch_sports_events(self, calendar_name: str, **kwargs):
         """
-        Get holidays data from Google Calendar.
+        Get sports event data from Google Calendar.
 
         Parameters
         ----------
-        region : str
-            Region for which holiday calendar is required
+        calendar_name : str
+            Name of the sports event calendar
         kwargs :
             Arguments to be passed to the events API.
         """
@@ -23,13 +23,13 @@ class GoogleSportsCalendar(GoogleCalendar):
             error_msg = f'Calendar with name {calendar_name} not available.'
             error_msg +='\nPlease ensure that calendar name is correct and you have subscribed to the calendar'
             raise ValueError(error_msg)
-        holidays = self.fetch_events(calendar_list[calendar_name], self._sports_event_parser, **kwargs)
-        return pd.DataFrame(holidays, columns=['name', 'start_datetime', 'end_datetime'])
+        events = self.fetch_events(calendar_list[calendar_name], self._sports_event_parser, **kwargs)
+        return pd.DataFrame(events, columns=['name', 'start_datetime', 'end_datetime'])
 
     @staticmethod
     def _sports_event_parser(item):
         """
-        Parse holiday name, start date and end date from the holiday json object
+        Parse event name, start datetime and end datetime from the event json object
         """
         return item['summary'], item.get('start',{}).get('dateTime'), item.get('end',{}).get('dateTime')
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     argparser.add_argument('--timeMax', help="Upper bound (exclusive) for an event's start time to filter by. Must be an RFC3339 timestamp with mandatory time zone offset. Default: None")
     argparser.add_argument('--creds_path', help='Path of the credentials file. Default is ./credentials.json')
     argparser.add_argument('--token_path', help='Path of the token file. Default is ./token.pickle')
-    argparser.add_argument('--output_path', help='Path to store the output. Default is ./holidays_<region_name>.csv')
+    argparser.add_argument('--output_path', help='Path to store the output. Default is "./<calendar_name> Events.csv"')
 
     args = argparser.parse_args()
     main(**vars(args))

@@ -51,7 +51,7 @@ if __name__ == '__main__':
     argparser.add_argument('--timeMax', help="Upper bound (exclusive) for an event's start time to filter by. Must be an RFC3339 timestamp with mandatory time zone offset. Default: None")
     argparser.add_argument('--creds_path', help='Path of the credentials file. Default is ./credentials.json')
     argparser.add_argument('--token_path', help='Path of the token file. Default is ./token.pickle')
-    argparser.add_argument('--output_path', help='Path to store the output. Default is "./Holidays In <region_name>.csv"')
+    argparser.add_argument('--output_path', help='Path to store the output. Default is "./Holidays In <region>.csv"')
 
     args = argparser.parse_args()
     main(**vars(args))
