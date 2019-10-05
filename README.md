@@ -44,7 +44,7 @@ python sports.py "India ICC Cricket"
 
 Calendar names for the subscribed calendars can be found under *Other calendars* section in the left pane of [Google Calendar](https://calendar.google.com/) page 
 
-Please refer to the [Calendar API Documentation] (https://developers.google.com/resources/api-libraries/documentation/calendar/v3/python/latest/index.html) for more details.
+Please refer to the [Calendar API Documentation](https://developers.google.com/resources/api-libraries/documentation/calendar/v3/python/latest/index.html) for more details.
 
 # Extension
 
