@@ -1,6 +1,6 @@
 # Introduction
 
-This directory contains scripts to download information about regional holidays or sports event data from Google Calendar API in a csv format.
+This repository contains scripts to download information about regional holidays or sports event data from Google Calendar API in a csv format.
 
 # Requirements
 
@@ -20,7 +20,7 @@ pip3 install -U pandas pathlib google-api-python-client google-auth-httplib2 goo
 
 # Setup
 
-Please checkout [Python Quickstart Guide](https://developers.google.com/calendar/quickstart/python) to enable Calendar API for your Google account, generate and download credentials. You will also need to subscribe to the calendar of interest to make it available for downloading. Go to https://calendar.google.com/calendar/r/settings/browsecalendars and select the checkbox against the calendar of interest to subscribe.
+Please checkout [Python Quickstart Guide](https://developers.google.com/calendar/quickstart/python) to enable Calendar API for your Google account, generate and download credentials. You will also need to subscribe to the calendar of interest to make it available for downloading. Go to <https://calendar.google.com/calendar/r/settings/browsecalendars> and select the checkbox against the calendar of interest to subscribe.
 
 # Usage
 
@@ -32,7 +32,7 @@ python holidays.py India
 
 
 
-Holidays for other region can be downloaded by entering respective region name as argument in the command line. To find the list of accepted region names, checkout *Regional holidays* section at https://calendar.google.com/calendar/r/settings/browsecalendars
+Holidays for other region can be downloaded by entering respective region name as argument in the command line. To find the list of accepted region names, checkout *Regional holidays* section at <https://calendar.google.com/calendar/r/settings/browsecalendars>
 
 To download data for sports event, run the script `sports.py` with calendar name as the command line argument:
 
